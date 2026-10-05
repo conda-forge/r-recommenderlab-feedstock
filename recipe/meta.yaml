@@ -1,15 +1,15 @@
-{% set version = '1.0.7' %}
+{% set version = "1.1.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-recommenderlab
-  version: "{{ version|replace('-', '_') }}"
+  version: {{ version|replace('-', '_') }}
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/recommenderlab_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/recommenderlab/recommenderlab_{{ version }}.tar.gz
-  sha256: 91b128288c8774414c84e9cf89bf1e8a055fde2d80ccc73051ee60ec17aa534d
+  sha256: 2debac0664f2b58dbffbcf0d9b31b2d5a2d025059d3eea4cab981ec3a71e9e80
 
 build:
   number: 0
@@ -53,10 +53,7 @@ test:
 about:
   home: https://github.com/mhahsler/recommenderlab
   license: GPL-2.0-only
-  summary: Provides a research infrastructure to develop and evaluate collaborative filtering
-    recommender algorithms. This includes a sparse representation for user-item matrices,
-    many popular algorithms, top-N recommendations, and cross-validation. Hahsler (2022)
-    <doi:10.48550/arXiv.2205.12371>.
+  summary: Provides a research infrastructure to develop and evaluate collaborative filtering recommender algorithms. This includes a sparse representation for user-item matrices, many popular algorithms, top-N recommendations, and cross-validation. Hahsler (2022) <doi:10.48550/arXiv.2205.12371>.
   license_family: GPL2
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
